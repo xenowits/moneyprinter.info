@@ -17,22 +17,6 @@ export const Home: NextPage<HomeProps> = ({ data }) => {
 
       <p className="description">A measure of decentralization</p>
 
-      {/* <p>
-        Like this site?{' '}
-        <a href="https://gitcoin.co/grants/1624/cryptofees-info">Support it on Gitcoin Grants</a>
-      </p> */}
-
-      {/* <div>
-        <a
-          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-          className="twitter-share-button"
-          data-show-count="true"
-        >
-          Tweet
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js"></script>
-      </div> */}
-
       <List data={data} />
 
       <style jsx>{`
@@ -68,112 +52,10 @@ export const Home: NextPage<HomeProps> = ({ data }) => {
   );
 };
 
-// This is sample data to populate the webpage when server is not available
-// const data = [
-//   {
-//     id: 1,
-//     results: {
-//       metadata: CHAIN_DATA.get("ATOM").metadata,
-//       name: CHAIN_DATA.get("ATOM").name,
-//       icon: CHAIN_DATA.get("ATOM").icon,
-//       currVal: 7,
-//       prevVal: 7,
-//     },
-//   },
-//   {
-//     id: 2,
-//     results: {
-//       metadata: CHAIN_DATA.get("BNB").metadata,
-//       name: CHAIN_DATA.get("BNB").name,
-//       icon: CHAIN_DATA.get("BNB").icon,
-//       currVal: 7,
-//       prevVal: 7,
-//     },
-//   },
-//   {
-//     id: 3,
-//     results: {
-//       metadata: CHAIN_DATA.get("MINA").metadata,
-//       name: CHAIN_DATA.get("MINA").name,
-//       icon: CHAIN_DATA.get("MINA").icon,
-//       currVal: 11,
-//       prevVal: 11,
-//     },
-//   },
-//   {
-//     id: 4,
-//     results: {
-//       metadata: CHAIN_DATA.get("OSMO").metadata,
-//       name: CHAIN_DATA.get("OSMO").name,
-//       icon: CHAIN_DATA.get("OSMO").icon,
-//       currVal: 4,
-//       prevVal: 4,
-//     },
-//   },
-//   {
-//     id: 5,
-//     results: {
-//       metadata: CHAIN_DATA.get("MATIC").metadata,
-//       name: CHAIN_DATA.get("MATIC").name,
-//       icon: CHAIN_DATA.get("MATIC").icon,
-//       currVal: 2,
-//       prevVal: 2,
-//     },
-//   },
-//   {
-//     id: 6,
-//     results: {
-//       metadata: CHAIN_DATA.get("SOL").metadata,
-//       name: CHAIN_DATA.get("SOL").name,
-//       icon: CHAIN_DATA.get("SOL").icon,
-//       currVal: 19,
-//       prevVal: 19,
-//     },
-//   },
-//   {
-//     id: 7,
-//     results: {
-//       metadata: CHAIN_DATA.get("AVAX").metadata,
-//       name: CHAIN_DATA.get("AVAX").name,
-//       icon: CHAIN_DATA.get("AVAX").icon,
-//       currVal: 24,
-//       prevVal: 24,
-//     },
-//   },
-//   {
-//     id: 8,
-//     results: {
-//       metadata: CHAIN_DATA.get("LUNA").metadata,
-//       name: CHAIN_DATA.get("LUNA").name,
-//       icon: CHAIN_DATA.get("LUNA").icon,
-//       currVal: 7,
-//       prevVal: 7,
-//     },
-//   },
-//   {
-//     id: 9,
-//     results: {
-//       metadata: CHAIN_DATA.get("GRT").metadata,
-//       name: CHAIN_DATA.get("GRT").name,
-//       icon: CHAIN_DATA.get("GRT").icon,
-//       currVal: 3,
-//       prevVal: 3,
-//     },
-//   },
-//   {
-//     id: 10,
-//     results: {
-//       metadata: CHAIN_DATA.get("RUNE").metadata,
-//       name: CHAIN_DATA.get("RUNE").name,
-//       icon: CHAIN_DATA.get("RUNE").icon,
-//       currVal: 12,
-//       prevVal: 10,
-//     },
-//   },
-// ];
-
 export const getStaticProps: GetStaticProps = async () => {
-  let resp = await axios.get("http://localhost:8080/nakamoto-coefficients");
+  let resp = await axios.get(
+    "http://168.119.165.122:8080/nakamoto-coefficients"
+  );
   let data = resp.data.coefficients.map((chain: any, indx: number) => {
     return {
       id: indx + 1,
