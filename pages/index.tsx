@@ -26,7 +26,7 @@ export const Home: () => JSX.Element = () => {
     // to enjoy this time with my friends and family. Here's a link I found that makes me think env vars are tricky:
     // https://www.saltycrane.com/blog/2021/04/buildtime-vs-runtime-environment-variables-nextjs-docker/
     // PS: This is the nakaflow server address.
-    let url = "http://168.119.165.122:8080/nakamoto-coefficients"
+    let url = "http://168.119.165.122:8080/naka-coeffs"
     const { data, error } = useSWR(
         url,
         fetcher
