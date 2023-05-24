@@ -189,7 +189,7 @@ export const Home: () => JSX.Element = () => {
         <p className="content">
           You can join the{" "}
           <a href="https://discord.gg/Una8qmFg">public discord</a> to discuss
-          ideas and provide product feedback. <br />
+          ideas with the nakaflow community and provide product feedback. <br />
         </p>
       </div>
 
